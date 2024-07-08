@@ -13,7 +13,7 @@
     --batch_size 4
 ```
 
----------- Result ----------
+---------- Result ----------\
 Total loss: 22700.653057813644\
 Character num: 84551\
 BPC: 0.38734159964339426\
@@ -30,10 +30,10 @@ finished
 --batch_size 8
 ```
 
----------- Result ----------
-Total loss: 166836.7483215332
-Character num: 705052
-BPC: 0.3413855282185088
+---------- Result ----------\
+Total loss: 166836.7483215332\
+Character num: 705052\
+BPC: 0.3413855282185088\
 finished
 
 ### 2. Sparse AutoEncoder
