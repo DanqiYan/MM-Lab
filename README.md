@@ -11,10 +11,10 @@
     --batch_size 4
 
     ---------- Result ----------
-Total loss: 22700.653057813644
-Character num: 84551
-BPC: 0.38734159964339426
-finished
+Total loss: 22700.653057813644\
+Character num: 84551\
+BPC: 0.38734159964339426\
+finished\
 
 <br>
 (2) RTX 6000 with  110 items
