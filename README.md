@@ -3,13 +3,15 @@
 2024.07.08
 ### 1. BPC:
 (1) Colab with 110 items 
+
+```python
 !python /content/main.py\
     --model_name meta-llama/Llama-2-7b-hf\
     --task_name python\
     --block_size 400\
     --stride 64\
     --batch_size 4
-
+```
     ---------- Result ----------
 Total loss: 22700.653057813644\
 Character num: 84551\
