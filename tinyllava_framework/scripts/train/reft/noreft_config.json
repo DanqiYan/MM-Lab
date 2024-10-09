@@ -1,0 +1,40 @@
+{
+    "llm": {"representations": [
+        {"layer": 8,
+        "component": "block_output",
+        "low_rank_dimension": 4,
+        "intervention": {
+            "type": "noreft",
+            "embed_dim": 2048,
+            "low_rank_dimension": 4,
+            "add_bias": false
+        }},
+        {"layer": 10,
+        "component": "block_output",
+        "low_rank_dimension": 4,
+        "intervention": {
+            "type": "noreft",
+            "embed_dim": 2048,
+            "low_rank_dimension": 4,
+            "add_bias": false
+        }}
+    ]},
+    "vision_tower": {"representations": [
+        {"component": "vision_model.encoder.layers[14].output",
+        "low_rank_dimension": 4,
+        "intervention": {
+            "type": "noreft",
+            "embed_dim": 1152,
+            "low_rank_dimension": 4,
+            "add_bias": false
+        }},
+        {"component": "vision_model.encoder.layers[16].output",
+        "low_rank_dimension": 8,
+        "intervention": {
+            "type": "noreft",
+            "embed_dim": 1152,
+            "low_rank_dimension": 4,
+            "add_bias": false
+        }}
+    ]}
+}

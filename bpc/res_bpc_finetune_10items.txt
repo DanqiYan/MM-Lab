@@ -1,0 +1,87 @@
+### Starting TaskPrologue of job 2084427 on a0522 at Fri Oct  4 18:34:27 CEST 2024
+Running on cores 64-79 with governor ondemand
+Fri Oct  4 18:34:27 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.28.03              Driver Version: 560.28.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:81:00.0 Off |                  Off |
+|  0%   34C    P8             29W /  300W |       1MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+### Finished TaskPrologue
+
+a0522.nhr.fau.de
+Fri Oct  4 18:34:28 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.28.03              Driver Version: 560.28.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A40                     On  |   00000000:81:00.0 Off |                  Off |
+|  0%   34C    P0             29W /  300W |       1MiB /  49140MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+[2024-10-04 18:34:42,015] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Warning: The cache directory for DeepSpeed Triton autotune, /home/hpc/b211dd/b211dd20/.triton/autotune, appears to be on an NFS system. While this is generally acceptable, if you experience slowdowns or hanging when DeepSpeed exits, it is recommended to set the TRITON_CACHE_DIR environment variable to a non-NFS path.
+nnsight is not detected. Please install via 'pip install nnsight' for nnsight backend.
+Namespace(pretrained_model_path=None, finetune_model_path='/home/atuin/b211dd/b211dd20/tinyllava/checkpoints/llava_factory/tiny-llava-phi-2-siglip-so400m-patch14-384-base-finetune_full', model_base=None, conv_mode='phi', temperature=0.2, task_name='python', block_size=1024, stride=512, batch_size=8, file_num=-1, flash=False, gpu=0, cache_dir='/home/atuin/b211dd/b211dd20/bpc')
+2362.47924805
+2311.46215820
+3148.17309570
+3462.30761719
+1440.96826172
+1221.71423340
+2368.44628906
+---------- Result ----------
+Total loss: 16315.550903320312
+Character num: 84551
+BPC: 0.27839250130207405
+finished
+[1;34mwandb[0m:
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /home/hpc/b211dd/b211dd20/compression/bpc/wandb/offline-run-20241004_183449-ah1sivno[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/offline-run-20241004_183449-ah1sivno/logs[0m
+=== JOB_STATISTICS ===
+=== current date     : Fri Oct  4 18:46:25 CEST 2024
+= Job-ID             : 2084427 on alex
+= Job-Name           : bpc-phi-test
+= Job-Command        : /home/hpc/b211dd/b211dd20/compression/bpc/bpc_test.slurm
+= Initial workdir    : /home/hpc/b211dd/b211dd20/compression/bpc
+= Queue/Partition    : a40
+= Slurm account      : b211dd with QOS=normal
+= Requested resources:  for 02:00:00
+= Elapsed runtime    : 00:12:00
+= Total RAM usage    : 0.6 GiB of assigned  GiB (%)
+= Node list          : a0522
+= Subm/Elig/Start/End: 2024-10-04T18:34:25 / 2024-10-04T18:34:25 / 2024-10-04T18:34:25 / 2024-10-04T18:46:25
+======================
+=== Quota infos ======
+    Path              Used     SoftQ    HardQ    Gracetime  Filec    FileQ    FiHaQ    FileGrace    
+    /home/hpc           35.2G   104.9G   209.7G        N/A      63K     500K   1,000K        N/A    
+    /home/vault          0.0K  1048.6G  2097.2G        N/A       1      200K     400K        N/A    
+======================
+=== GPU utilization ==
+gpu_name, gpu_bus_id, pid, gpu_utilization [%], mem_utilization [%], max_memory_usage [MiB], time [ms]
+NVIDIA A40, 00000000:81:00.0, 2679943, 0 %, 0 %, 14398 MiB, 703505 ms

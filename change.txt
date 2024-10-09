@@ -1,0 +1,62 @@
+09.18: 
+- 提交了bpc_test 
+    然后/home/hpc/b211dd/b211dd20/compression/tinyllava_framework/tinyllava/eval/bpc4tinyllava.py 文件不在bpc内 可能需要修改路径
+- 提交了模型pretrain 估计四小时后跑完
+- change.txt 权限还没打开 (开了)
+
+
+09.19-20:
+- bpc4tinyllava.py的确是放在eval里了
+- pretrain顺利跑完了，用pretrain模型跑了bpc部分数据，算出来0.27，符合预期
+- finetune有wandb的登录问题, 需要offline
+
+09.21：
+- wandb问题（解决）
+- oom问题
+    - 尝试改（1）batchsize从8到4，（2）zero2换成zero3 -> 显示32小时过长
+    - 尝试改（1）batchsize保持8，（2）zero2换成zero3，（3）使用a100 80GB 8个 -> 未知 暂时说是31h，估计会减少 -> 解决了，见9.29
+- ocr_vqa缺图片
+    - 使用官方py文件/home/atuin/b211dd/b211dd20/ocr_vqa/download_ocrvqa.py重新下载
+    - 下载中遇到报错：urllib.error.HTTPError: HTTP Error 404: Not Found
+    - 修改官方文件代码：遇到HTTPError时不要停止运行，将找不到的URL记录在/home/atuin/b211dd/b211dd20/dataset/failed_urls.txt
+    - 可能需要十小时 (已跑完，官方共207572张图，成功下载207535张，37个链接打不开)
+    - ocr_vqa权限已开
+
+9.27:
+- llava_v1_5_mix665k.json 部分images后缀为jpg，而实际上是gif文件
+    - 修改dataset.py 66-78 行，优先查找 .jpg 文件，如果未找到则查找对应的 .gif 文件
+
+结果：找不到过期的图片
+
+9.29
+- 找不到的图片替换成全黑的，完成finetune，约18h
+
+9.30
+- bpc finetune需要wandb的登录(包括环境变量的设置)以及offline设置，但是不知道为什么之前pretrain的时候不用
+
+10.4
+- bpc finetune结果是0.2738左右，pretrain和finetune的bpc计算分别使用Evaluator中的load_pretrained/finetune_model()函数
+- 以上bpc都只使用了10个sample，pretrain和finetune大约都需要8分多钟，现在正在尝试提高到5%sample，看看结论是否有变化
+
+10.6
+- 用textvqa(Accuracy: 56.26%)以及scienceqa(Accuracy: 75.41%, IMG-Accuracy: 71.05%)验证finetune的模型没有问题，和官方的checkpoint的benchmark结果差不多
+
+10.7-8
+- python数据集有10977条，正在尝试用2个gpu跑所有python数据测finetune和pretrain的bpc
+    finetune: ---------- Result ----------
+    Total loss: 24929883.721740723
+    Character num: 98371018
+    BPC: 0.3656180483492998
+
+    pretrain: ---------- Result ----------
+    Total loss: 24396958.60017395
+    Character num: 98371018
+    BPC: 0.35780224603596467
+
+- arxiv_math
+经常加载超时，正在尝试手动加载数据，而不是链接huggingface下载
+
+pretrain---------- Result ----------
+Total loss: 51105139.729003906
+Character num: 101331999
+BPC: 0.7275996958371608

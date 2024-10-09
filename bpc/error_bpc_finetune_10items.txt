@@ -1,0 +1,12 @@
+wandb: Using wandb-core as the SDK backend. Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.18.1
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+/home/hpc/b211dd/b211dd20/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:1150: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:04<00:04,  4.98s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.77s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:09<00:00,  4.80s/it]
+Map (num_proc=8):   0%|          | 0/10 [00:00<?, ? examples/s]Token indices sequence length is longer than the specified maximum sequence length for this model (8355 > 3072). Running this sequence through the model will result in indexing errors
+Map (num_proc=8):  10%|█         | 1/10 [00:01<00:11,  1.29s/ examples]Map (num_proc=8):  20%|██        | 2/10 [00:01<00:05,  1.54 examples/s]Map (num_proc=8):  30%|███       | 3/10 [00:01<00:03,  2.20 examples/s]Map (num_proc=8):  50%|█████     | 5/10 [00:01<00:01,  3.61 examples/s]Map (num_proc=8):  60%|██████    | 6/10 [00:02<00:01,  2.44 examples/s]Map (num_proc=8):  70%|███████   | 7/10 [00:03<00:01,  1.69 examples/s]Map (num_proc=8):  80%|████████  | 8/10 [00:03<00:00,  2.16 examples/s]Map (num_proc=8):  90%|█████████ | 9/10 [00:04<00:00,  2.18 examples/s]Token indices sequence length is longer than the specified maximum sequence length for this model (12339 > 3072). Running this sequence through the model will result in indexing errors
+Map (num_proc=8): 100%|██████████| 10/10 [00:05<00:00,  1.57 examples/s]Map (num_proc=8): 100%|██████████| 10/10 [00:05<00:00,  1.76 examples/s]
+  0%|          | 0/7 [00:00<?, ?it/s] 14%|█▍        | 1/7 [00:01<00:08,  1.46s/it] 29%|██▊       | 2/7 [00:02<00:04,  1.06it/s] 43%|████▎     | 3/7 [00:02<00:03,  1.28it/s] 57%|█████▋    | 4/7 [00:03<00:02,  1.42it/s] 71%|███████▏  | 5/7 [00:03<00:01,  1.50it/s] 86%|████████▌ | 6/7 [00:04<00:00,  1.56it/s]100%|██████████| 7/7 [00:04<00:00,  1.61it/s]100%|██████████| 7/7 [00:04<00:00,  1.40it/s]

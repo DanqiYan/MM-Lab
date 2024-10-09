@@ -1,0 +1,13 @@
+{
+    "llm": {"representations": [
+        {"layer": "all",
+        "component": "block_output",
+        "low_rank_dimension": 4,
+        "intervention": {
+            "type": "loreft",
+            "embed_dim": 2560,
+            "low_rank_dimension": 4,
+            "dropout": 0.05
+        }}
+    ]}
+}

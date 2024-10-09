@@ -1,0 +1,33 @@
+wandb: Using wandb-core as the SDK backend. Please refer to https://wandb.me/wandb-core for more information.
+wandb: Tracking run with wandb version 0.18.1
+wandb: W&B syncing is set to `offline` in this directory.  
+wandb: Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+/home/atuin/b211dd/b211dd20/software/private/conda/envs/compression/lib/python3.10/site-packages/huggingface_hub/file_download.py:1150: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [19:32<19:32, 1172.99s/it]Loading checkpoint shards: 100%|██████████| 2/2 [31:16<00:00, 896.96s/it] Loading checkpoint shards: 100%|██████████| 2/2 [31:16<00:00, 938.44s/it]
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 123 examples [00:07, 15.93 examples/s]Generating train split: 245 examples [00:16, 15.11 examples/s]Generating train split: 245 examples [00:31, 15.11 examples/s]Generating train split: 349 examples [01:51,  2.37 examples/s]Generating train split: 349 examples [26:58,  4.64s/ examples]
+Traceback (most recent call last):
+  File "/home/atuin/b211dd/b211dd20/software/private/conda/envs/compression/lib/python3.10/site-packages/datasets/builder.py", line 1853, in _prepare_split_single
+  File "/home/atuin/b211dd/b211dd20/software/private/conda/envs/compression/lib/python3.10/site-packages/datasets/packaged_modules/json/json.py", line 123, in _generate_tables
+PermissionError: [Errno 13] Permission denied
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hpc/b211dd/b211dd20/compression/tinyllava_framework/tinyllava/eval/bpc4tinyllava.py", line 349, in <module>
+    eval_model(args)
+  File "/home/atuin/b211dd/b211dd20/software/private/conda/envs/compression/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+  File "/home/hpc/b211dd/b211dd20/compression/tinyllava_framework/tinyllava/eval/bpc4tinyllava.py", line 266, in eval_model
+    eval_dataset = EvalDataset(
+  File "/home/hpc/b211dd/b211dd20/compression/tinyllava_framework/tinyllava/eval/bpc4tinyllava.py", line 45, in __init__
+    self._prepare()
+  File "/home/hpc/b211dd/b211dd20/compression/tinyllava_framework/tinyllava/eval/bpc4tinyllava.py", line 68, in _prepare
+    self._raw_dataset = load_dataset(
+  File "/home/atuin/b211dd/b211dd20/software/private/conda/envs/compression/lib/python3.10/site-packages/datasets/load.py", line 2096, in load_dataset
+  File "/home/atuin/b211dd/b211dd20/software/private/conda/envs/compression/lib/python3.10/site-packages/datasets/builder.py", line 924, in download_and_prepare
+  File "/home/atuin/b211dd/b211dd20/software/private/conda/envs/compression/lib/python3.10/site-packages/datasets/builder.py", line 999, in _download_and_prepare
+  File "/home/atuin/b211dd/b211dd20/software/private/conda/envs/compression/lib/python3.10/site-packages/datasets/builder.py", line 1740, in _prepare_split
+  File "/home/atuin/b211dd/b211dd20/software/private/conda/envs/compression/lib/python3.10/site-packages/datasets/builder.py", line 1896, in _prepare_split_single
+datasets.exceptions.DatasetGenerationError: An error occurred while generating the dataset
+/var/tmp/slurmd_spool/job2089546/slurm_script: line 32: 3418853 Bus error               (core dumped) python /home/hpc/b211dd/b211dd20/compression/tinyllava_framework/tinyllava/eval/bpc4tinyllava.py --task_name arxiv_math --block_size 1024 --stride 512 --batch_size 8 --cache_dir /home/atuin/b211dd/b211dd20/bpc
